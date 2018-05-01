@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "551928475897",
+    "firebase_url": "https://caroldisign.firebaseio.com",
+    "project_id": "caroldisign",
+    "storage_bucket": "caroldisign.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551928475897:android:acf6977d10ce248d",
+        "android_client_info": {
+          "package_name": "com.vip.chapetos.caroldesignv1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551928475897-cm0g9n340hqddtfv1uht3r90e0qtk4h0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_EALcV1BNj1L_4Sj11Xq8-D8M2BsJy9I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551928475897:android:8d8bc69404b4a7f9",
+        "android_client_info": {
+          "package_name": "com.vip.chapetos.caroldesing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551928475897-cm0g9n340hqddtfv1uht3r90e0qtk4h0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_EALcV1BNj1L_4Sj11Xq8-D8M2BsJy9I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
