@@ -17,9 +17,12 @@ import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.vip.chapetos.caroldesignv1.Objetos.FirebaseReferencia;
+import com.google.firebase.database.ValueEventListener;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +34,7 @@ public class ClassCategoria extends AppCompatActivity {
     EditText editTxtIngresar;
     ListView listViewCat;
     List<Categoria> categorias;
+    public static String catId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +42,20 @@ public class ClassCategoria extends AppCompatActivity {
         setContentView(R.layout.activity_categoria);
 
         categorias = new ArrayList<Categoria>();
-        datareferece = FirebaseDatabase.getInstance().getReference("Categorias");
+        datareferece = FirebaseDatabase.getInstance().getReference("categorias");
 
         btnSave = (Button) findViewById(R.id.btnSave);
         editTxtIngresar = (EditText) findViewById(R.id.editTxtIngresar);
         listViewCat = (ListView) findViewById(R.id.listCategorias);
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String cat = editTxtIngresar.getText().toString();
 
-                if(TextUtils.isEmpty(catId)){
+                if (TextUtils.isEmpty(catId)) {
                     //crear
-                    String id =datareferece.push().getKey();
+                    String id = datareferece.push().getKey();
                     Categoria categoria = new Categoria(id, cat);
                     datareferece.child(id).setValue(categoria);
 
@@ -59,29 +64,35 @@ public class ClassCategoria extends AppCompatActivity {
                     //modificar
                     datareferece.child(catId).child("categoria").setValue(cat);
                     Toast.makeText(ClassCategoria.this, "Categoria Modificada", Toast.LENGTH_SHORT).show();
-
-
                 }
-
                 editTxtIngresar.setText(null);
                 catId = "";
+            }
+            });
+
     }
+        @Override
+            protected void onStart() {
+                super.onStart();
 
+            datareferece.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categorias.clear();
 
+                        for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+                            Categoria categoria = postSnapshot.getValue(Categoria.class);
+                            categorias.add(categoria);
+                        }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_categoria, menu);
-        return true;
-    }
+                        CatList catAdapter = new CatList(ClassCategoria.this, categorias, datareferece, editTxtIngresar);
+                        listViewCat.setAdapter(catAdapter);
+                    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
 
-        int id = item.getItemId();
-        if(id==R.id.action_settings){
-            return true;
+                    }
+                });
+            }
         }
-        return super.onOptionsItemSelected(item);
-    }
-}
