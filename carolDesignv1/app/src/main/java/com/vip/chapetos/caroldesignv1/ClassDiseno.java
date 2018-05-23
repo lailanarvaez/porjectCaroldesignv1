@@ -26,7 +26,7 @@ public class ClassDiseno extends AppCompatActivity {
     EditText editTextImg;
     ListView listViewDis;
         List<Diseno> disenos;
-    private String id_categoria = "";
+    public String id_categoria = "";
     public static String disId;
 
     @Override

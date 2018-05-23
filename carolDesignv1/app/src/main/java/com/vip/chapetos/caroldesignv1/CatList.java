@@ -23,6 +23,7 @@ public class CatList extends ArrayAdapter<Categoria> {
     private List<Categoria> categorias;
     DatabaseReference databaseReference;
     EditText edtCat;
+    public String id_categ;
 
     public CatList(@NonNull Activity context, List<Categoria> categorias, DatabaseReference databaseReference, EditText edtCat){
         super(context, R.layout.activity_cellcategoria, categorias);
@@ -67,6 +68,7 @@ public class CatList extends ArrayAdapter<Categoria> {
                 classdiseno.putExtra("id_categoria", categoria.getId() );
                 classdiseno.putExtra("categoria",txtName.getText().toString());
                 v.getContext().startActivity(classdiseno);
+                ClassCategoria.catId = categoria.getId();
             }
         });
 

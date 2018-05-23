@@ -34,7 +34,8 @@
         android:layout_alignParentRight="true"
         android:text="M"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@id/btnDeleteDiseno"/>
+        android:layout_toLeftOf="@id/btnDeleteDiseno"
+        />
 
     <Button
         android:id="@+id/btnDeleteDiseno"
@@ -43,7 +44,8 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="62dp"
-        android:text="E"/>
+        android:text="E"
+        android:background="@color/colorAccent"/>
 
 
 </RelativeLayout>

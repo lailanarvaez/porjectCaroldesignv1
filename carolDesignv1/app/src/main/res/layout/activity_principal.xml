@@ -20,7 +20,7 @@
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonempezar"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -41,11 +41,11 @@
 
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonadmin"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:background="#C914BE"
+            android:background="@color/colorPrimary"
             android:text="ADMIN"
             android:textColor="#FEFEFE"
             android:textSize="15sp" />

@@ -32,6 +32,8 @@ public class DisList extends ArrayAdapter<Diseno> {
     DatabaseReference databaseReference;
     EditText edtDiseno;
     ImageView imgDiseno;
+    TextView txttitulo;
+
 
     public DisList(@NonNull Activity context, List<Diseno> disenos, DatabaseReference databaseReference, EditText edtDiseno, String imgDiseno){
         super(context, R.layout.activity_cell_diseno, disenos);
@@ -39,6 +41,7 @@ public class DisList extends ArrayAdapter<Diseno> {
         this.disenos = disenos;
         this.databaseReference = databaseReference;
         this.edtDiseno = edtDiseno;
+
         //ASIGNO LA IMAGEN
         URL imageUrl = null;
         HttpURLConnection conn = null;
@@ -62,9 +65,14 @@ public class DisList extends ArrayAdapter<Diseno> {
     }
 
     public View getView(int pos, View view, ViewGroup parent){
+
+       // if(ClassCategoria.catId =
+       /* if(CatList.){
+
+
+        }*/
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.activity_cell_diseno, null, true);
-
         TextView txtName = (TextView) listViewItem.findViewById(R.id.txtTitleDiseno);
         ImageView img = (ImageView) listViewItem.findViewById(R.id.imgDiseno);
         Button btnDelete = (Button) listViewItem.findViewById(R.id.btnDeleteDiseno);

@@ -25,17 +25,20 @@
         android:layout_marginBottom="87dp"
         android:text="Tu Diseño A La Mano"
         android:textColor="@color/colorAccent"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_below="@id/scroll"/>
 
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="266dp"
         android:layout_height="301dp"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_centerInParent="false"
         android:layout_marginTop="48dp"
         android:background="#E1DDDE"
-        android:clipToPadding="true"
-        android:fillViewport="true">
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -87,8 +90,7 @@
                 android:ems="10"
                 android:hint="Contraseña"
                 android:inputType="textPassword|numberPassword"
-                android:lineSpacingExtra="8sp"
-                android:selectAllOnFocus="false"
+
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="18sp" />
 
