@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DisenosActivity" />
+        <activity android:name=".CellDisenoActivity"></activity>
     </application>
 
 </manifest>

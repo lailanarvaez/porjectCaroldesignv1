@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DisenosActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/categorias"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/txtcategorias"
+            android:layout_marginTop="20dp"
+            />
+
+        <EditText
+            android:id="@+id/editTextDiseno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtcategorias"
+            android:layout_margin="20dp"
+            android:hint="Ingresar Diseño" />
+
+    <EditText
+        android:id="@+id/editTextImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextDiseno"
+        android:layout_margin="20dp"
+        android:hint="URL imagen" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear"
+            android:layout_below="@id/editTextImg"
+            android:layout_centerHorizontal="true"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listCategorias"
+            android:layout_below="@id/btnSave"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="right"
+            >
+
+        </ListView>
+
+    </RelativeLayout>
