@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "772691232339",
+    "firebase_url": "https://categoriadb-7fbb7.firebaseio.com",
+    "project_id": "categoriadb-7fbb7",
+    "storage_bucket": "categoriadb-7fbb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772691232339:android:66da4d06e0ef52b1",
+        "android_client_info": {
+          "package_name": "com.example.diana.categoriascrud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772691232339-r4g2g86465jk3h5lhf3b9ptdo2mq9qdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIy2G92SQrCWlZZdqNcuprZG1aLNf6LaU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
