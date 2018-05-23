@@ -16,11 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClassDiseno">
-
-
-        </activity>
-
+        <activity android:name=".ClassDiseno" />
+        <activity android:name=".principal" />
+        <activity android:name=".login"></activity>
     </application>
 
 </manifest>
