@@ -1,10 +1,13 @@
 package com.vip.chapetos.caroldesignv1;
 
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,7 +36,7 @@ public class CatList extends ArrayAdapter<Categoria> {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.activity_cellcategoria, null, true);
 
-        TextView txtName = (TextView) listViewItem.findViewById(R.id.txtTitle);
+        final TextView txtName = (TextView) listViewItem.findViewById(R.id.txtTitle);
         Button btnDelete = (Button) listViewItem.findViewById(R.id.btnDelete);
         Button btnUpdate = (Button) listViewItem.findViewById(R.id.btnUpdate);
 
@@ -44,6 +47,7 @@ public class CatList extends ArrayAdapter<Categoria> {
             @Override
             public void onClick(View v) {
                 databaseReference.child(categoria.getId()).removeValue();
+
             }
         });
 
@@ -52,6 +56,15 @@ public class CatList extends ArrayAdapter<Categoria> {
             public void onClick(View v) {
                 edtCat.setText(categoria.getCategoria());
                 ClassCategoria.catId = categoria.getId();
+            }
+        });
+
+       txtName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent classdiseno = new Intent(v.getContext(), ClassDiseno.class);
+                classdiseno.putExtra("categoria",txtName.getText().toString());
+                v.getContext().startActivity(classdiseno);
             }
         });
 

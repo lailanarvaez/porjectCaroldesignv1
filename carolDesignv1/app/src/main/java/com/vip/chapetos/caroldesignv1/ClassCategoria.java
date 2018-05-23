@@ -1,14 +1,17 @@
 package com.vip.chapetos.caroldesignv1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -30,12 +33,13 @@ import java.util.List;
 public class ClassCategoria extends AppCompatActivity {
 
     DatabaseReference datareferece;
-    
+
     Button btnSave;
     EditText editTxtIngresar;
     ListView listViewCat;
     List<Categoria> categorias;
     public static String catId;
+    CatList context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,8 @@ public class ClassCategoria extends AppCompatActivity {
         btnSave = (Button) findViewById(R.id.btnSave);
         editTxtIngresar = (EditText) findViewById(R.id.editTxtIngresar);
         listViewCat = (ListView) findViewById(R.id.listCategorias);
+
+
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +76,33 @@ public class ClassCategoria extends AppCompatActivity {
                 catId = "";
             }
             });
+        System.out.println("sdfsfsssdsfsdfsdfsdfd");
+     listViewCat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final int pos = position;
+                System.out.println("11111111111111");
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            System.out.println("222222222222222");
+                            Intent classdiseno = new Intent(getApplicationContext(), ClassDiseno.class);
+                            startActivity(classdiseno);
+
+                        } catch (Exception e) {
+                        }
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                            }
+                        });
+                    }
+                }).start();
+                }
+             });
 
     }
         @Override
