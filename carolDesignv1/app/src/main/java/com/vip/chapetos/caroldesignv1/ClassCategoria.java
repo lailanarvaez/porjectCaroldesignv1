@@ -76,7 +76,7 @@ public class ClassCategoria extends AppCompatActivity {
                 catId = "";
             }
             });
-        System.out.println("sdfsfsssdsfsdfsdfsdfd");
+     /*   System.out.println("sdfsfsssdsfsdfsdfsdfd");
      listViewCat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 
@@ -102,7 +102,7 @@ public class ClassCategoria extends AppCompatActivity {
                     }
                 }).start();
                 }
-             });
+             });*/
 
     }
         @Override

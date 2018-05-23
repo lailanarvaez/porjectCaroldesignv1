@@ -3,4 +3,8 @@
     <string name="title">Titulo</string>
     <string name="action_settings">NombreCategoria</string>
     <string name="categorias">Categorias</string>
+    <string name="diseno">Diseño</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

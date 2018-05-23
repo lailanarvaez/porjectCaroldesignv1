@@ -62,7 +62,9 @@ public class CatList extends ArrayAdapter<Categoria> {
        txtName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent classdiseno = new Intent(v.getContext(), ClassDiseno.class);
+                classdiseno.putExtra("id_categoria", categoria.getId() );
                 classdiseno.putExtra("categoria",txtName.getText().toString());
                 v.getContext().startActivity(classdiseno);
             }
