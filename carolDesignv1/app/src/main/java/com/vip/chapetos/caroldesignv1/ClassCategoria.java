@@ -5,10 +5,15 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.google.firebase.FirebaseApp;
@@ -16,40 +21,53 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.vip.chapetos.caroldesignv1.Objetos.FirebaseReferencia;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ClassCategoria extends AppCompatActivity {
 
-    private RecyclerView listaCategoria;
-    private CategoriaAdapter adaptador;
+    DatabaseReference datareferece;
+    Button btnSave;
+    EditText editTxtIngresar;
+    ListView listViewCat;
+    List<Categoria> categorias;
 
-    Firebase objReferencia;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria);
-        Firebase.setAndroidContext(this);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference referencia = database.getReference(FirebaseReferencia.referencia);
-        
+        categorias = new ArrayList<Categoria>();
+        datareferece = FirebaseDatabase.getInstance().getReference("Categorias");
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        btnSave = (Button) findViewById(R.id.btnSave);
+        editTxtIngresar = (EditText) findViewById(R.id.editTxtIngresar);
+        listViewCat = (ListView) findViewById(R.id.listCategorias);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String cat = editTxtIngresar.getText().toString();
+
+                if(TextUtils.isEmpty(catId)){
+                    //crear
+                    String id =datareferece.push().getKey();
+                    Categoria categoria = new Categoria(id, cat);
+                    datareferece.child(id).setValue(categoria);
+
+                    Toast.makeText(ClassCategoria.this, "Categoria creada", Toast.LENGTH_SHORT).show();
+                } else {
+                    //modificar
+                    datareferece.child(catId).child("categoria").setValue(cat);
+                    Toast.makeText(ClassCategoria.this, "Categoria Modificada", Toast.LENGTH_SHORT).show();
 
 
+                }
 
-        this.listaCategoria = (RecyclerView) findViewById(R.id.listCategorias);
-        adaptador = new CategoriaAdapter(this);
-        this.listaCategoria.setAdapter(adaptador);
-        getDatos();
-        //this.listaCategoria.setLayoutManager(LayoutManager);
+                editTxtIngresar.setText(null);
+                catId = "";
     }
 
 
-    public void getDatos(){
-
-
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
