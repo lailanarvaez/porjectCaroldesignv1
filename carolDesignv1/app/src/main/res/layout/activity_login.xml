@@ -19,103 +19,91 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="47dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="87dp"
+        android:layout_marginBottom="69dp"
         android:text="Tu Diseño A La Mano"
         android:textColor="@color/colorAccent"
-        android:textSize="30sp"
-        android:layout_below="@id/scroll"/>
+        android:textSize="30sp" />
 
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="266dp"
-        android:layout_height="301dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerInParent="false"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="50dp"
         android:background="#E1DDDE"
-        android:clipToPadding="false"
-        android:fillViewport="true"
-        >
+        android:clipToPadding="false">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="visible">
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="71dp"
+            android:text="Iniciar Sesión"
+            android:textColor="#C914BE"
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="18dp"
-                android:text="Iniciar Sesión"
-                android:textColor="#C914BE"
-                android:textSize="20sp" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_alignParentTop="true"
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="83dp"
-                app:srcCompat="@drawable/usu"
+            android:layout_marginTop="131dp"
+            android:layout_toStartOf="@+id/textView5"
+            app:srcCompat="@drawable/usu" />
 
-                />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="193dp"
+            android:layout_toStartOf="@+id/textView5"
+            android:background="#F8EFF7"
+            app:srcCompat="@drawable/contra" />
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/imageView2"
-                android:layout_marginBottom="101dp"
-                android:background="#F8EFF7"
-                app:srcCompat="@drawable/contra" />
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="157dp"
+            android:layout_height="42dp"
 
-            <EditText
-                android:id="@+id/editText2"
-                android:layout_width="157dp"
-                android:layout_height="42dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/imageView3"
-                android:layout_marginEnd="20dp"
-                android:ems="10"
-                android:hint="Contraseña"
-                android:inputType="textPassword|numberPassword"
+            android:layout_alignStart="@+id/button3"
+            android:layout_alignTop="@+id/imageView3"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword|numberPassword"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="18sp" />
 
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="18sp" />
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="157dp"
+            android:layout_height="42dp"
+            android:layout_alignStart="@+id/editText2"
+            android:layout_alignTop="@+id/imageView2"
+            android:ems="10"
+            android:hint="Usuario"
+            android:inputType="textEmailAddress" />
 
-            <EditText
-                android:id="@+id/editText3"
-                android:layout_width="157dp"
-                android:layout_height="42dp"
-                android:layout_alignStart="@+id/editText2"
-                android:layout_alignTop="@+id/imageView2"
-                android:ems="10"
-                android:hint="Usuario"
-                android:inputType="textEmailAddress" />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="207dp"
+            android:background="#C914BE"
+            android:text="INICIAR"
+            android:textColor="#FAF8F7" />
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="30dp"
-                android:background="#C914BE"
-                android:text="INICIAR"
-                android:textColor="#FAF8F7" />
 
-        </RelativeLayout>
 
     </ScrollView>
 
