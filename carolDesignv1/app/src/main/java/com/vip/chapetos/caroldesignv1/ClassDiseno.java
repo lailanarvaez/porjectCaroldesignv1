@@ -61,7 +61,7 @@ public class ClassDiseno extends AppCompatActivity {
                     Toast.makeText(ClassDiseno.this, "Diseño creado!", Toast.LENGTH_SHORT).show();
                 } else {
                     //modificar
-                    datareferece.child(disId).child("categoria").setValue(design);
+                    datareferece.child(disId).child("diseno").setValue(design);
                     Toast.makeText(ClassDiseno.this, "Diseño Modificado!!!", Toast.LENGTH_SHORT).show();
                 }
                 editTextDiseno.setText(null);
